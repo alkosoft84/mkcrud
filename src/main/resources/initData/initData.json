@@ -1,0 +1,56 @@
+[
+  {
+    "player": {
+      "name": "Liu Kang",
+      "character": "Good",
+      "reputation": 7,
+      "imageLink": "liukang.gif",
+      "story":"Info o Liu Kangu, szalony fighter itd."
+    }
+  },
+  {
+    "player": {
+      "name": "Sub Zero",
+      "character": "Bad",
+      "reputation": 7,
+      "imageLink": "sub.gif",
+      "story":"A tutaj Sub Zero szaleniec jeden, KANAŁY !!."
+    }
+  },
+  {
+    "player": {
+      "name": "Scorpion",
+      "character": "Bad",
+      "reputation": 6,
+      "imageLink": "scorpion.gif",
+      "story":"Scorpion, orki z majorki itp."
+    }
+  },
+  {
+    "player": {
+      "name": "Sonya",
+      "character": "Good",
+      "reputation": 5,
+      "imageLink": "sonya.gif",
+      "story":"Babeczka, cycki, babeczka."
+    }
+  },
+  {
+    "player": {
+      "name": "Johhny Cage",
+      "character": "Good",
+      "reputation": 4,
+      "imageLink": "johhny.gif",
+      "story":"Ten co nokautował waląc w jaja YEAH !!."
+    }
+  },
+  {
+    "player": {
+      "name": "Kung Lao",
+      "character": "Good",
+      "reputation": 2,
+      "imageLink": "kung.gif",
+      "story":"Zawodnik super, ojciec Liu Kanga."
+    }
+  }
+]

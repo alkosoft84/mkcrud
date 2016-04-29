@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Ang Demo</title>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
+    <script src="lib/angular-resource.js"></script>
+    <script src="lib/angular.audio.js"></script>
+    <script src="lib/angular-animate.js"></script>
+    <script src="lib/angular-sanitize.js"></script>
+    <script src="lib/ngToast.js"></script>
+    <script src="lib/jcs-auto-validate.js"></script>
+    <script src="js/modules/app.js"></script>
+    <script src="js/modules/playerModule.js"></script>
+    <script src="js/controllers/ctrlListJpa.js"></script>
+    <script src="js/controllers/ctrlListMongo.js"></script>
+    <script src="js/controllers/ctrlEditJpa.js"></script>
+    <script src="js/controllers/ctrlEditMongo.js"></script>
+    <script src="js/services/serviceDetailsJpa.js"></script>
+    <script src="js/factory/factoryDetailsMongo.js"></script>
+    <script src="js/directives/directiveErrSrc.js"></script>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <link href="css/ngToast.css" rel="stylesheet">
+    <link href="css/ngToast-animations.css" rel="stylesheet">
+    <link href="css/customStyle.css" rel="stylesheet">
+</head>
+<body>
+<toast></toast>
+<div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h1><a href ="/#/">Mortal Kombat CRUD</a></h1>
+    </div>
+    <div class="view-container">
+    <div ng-view class="panel-body view-frame"></div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+<section class="artistinfo">
+    <div>
+        <button type="button" class="btn btn-success" style ="width:200px;" ng-show="db=='JPA'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a href="/#/listjpa">Wróć do listy</a></button>
+        <button type="button" class="btn btn-success" style ="width:200px;" ng-show="db=='MONGO'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a href="/#/listmongo">Wróć do listy</a></button>
+        <br /><br />
+        <div style="margin:0 auto; width:800px;">
+            <div style="float:left;">
+            <div class="panel-heading center mortalFont">{{player.player.name}}</div>
+            <div class="panel-body center">
+            <img  ng-src="/images/{{player.player.imageLink}}" err-src="http://google.com/favicon.ico" alt="Photo of {{player.player.name}}" width="300" height="300"><br /><br />
+                </div>
+        </div>
+        <div class="panel panel-default" style="float:left; width:400px;">
+            <div class="panel-body center">
+                <form name="addPlayerForm" novalidate="novalidate" ng-submit="onSubmit()">
+                    <div class="form-group" style="text-align:left;">
+                        <label>Nazwa</label>
+                        <input type="text"
+                               class="form-control"
+                               ng-model="player.player.name"
+                               required="required"
+                               ng-required-err-type="bladRequired"
+                               ng-pattern="/^[A-Za-z0-9_]{1,32}$/"
+                               ng-pattern-err-type="blednyUser"
+                               ng-minlength="3"
+                                ng-minlength-err-type="bladZaMaloZnakow">
+                    </div>
+                    <div class="form-group" style="text-align:left;">
+                        <label for="reputation">Reputacja</label>
+                        {{a}}
+                        <select class="form-control" id="reputation" ng-model="player.player.reputation" required="required" ng-required-err-type="bladRequired">
+                            <option ng-repeat="product in reputations" value="{{product.value}}">{{product.label}}
+                        </select>
+                    </div>
+                    <div class="form-group" style="text-align:left;">
+                        <label>Charakter</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="characterRadios" value="Good" ng-model="player.player.character">
+                            Good
+                        </label>
+                        <label>
+                            <input type="radio" name="characterRadios" value="Bad" ng-model="player.player.character">
+                            Bad
+                        </label>
+                    </div>
+                        </div>
+                    <div class="form-group" style="text-align:left;">
+                        <label for="obrazek">Obrazek</label>
+                        {{a}}
+                        <select class="form-control" id="obrazek" ng-model="player.player.imageLink" required="required" ng-required-err-type="bladRequired">
+                            <option ng-repeat="imageLink in imageLinks" value="{{imageLink.value}}">{{imageLink.label}}
+                        </select>
+                    </div>
+                    <div class="form-group"  style="text-align:left;">
+                        <label>Opis postaci</label>
+                    <textarea class="form-control" rows="3" ng-model="player.player.story">{{player.player.story}}</textarea>
+                        </div>
+                    <div class="form-group">
+                    <button type="submit" class="btn btn-info">Zapisz</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+          <div class="panel panel-default" style="float:left; width:740px;">
+               <div class="panel-heading center mortalFont">DEBUG</div>
+               <div class="panel-body center">
+               <pre>{{player | json}}</pre>
+               <pre>{{addPlayerForm | json}}</pre>
+                   </div>
+           </div>
+       </div>
+    </div>
+</section>

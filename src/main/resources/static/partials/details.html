@@ -1,0 +1,26 @@
+<section class="artistinfo">
+    <div>
+        <button type="button" class="btn btn-success" style ="width:200px;" ng-show="db=='JPA'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a href="/#/listjpa">Wróć do listy</a></button>
+        <button type="button" class="btn btn-success" style ="width:200px;" ng-show="db=='MONGO'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a href="/#/listmongo">Wróć do listy</a></button>
+        <br /><br />
+        <div style="margin:0 auto; width:700px;">
+        <div style="float:left;">
+            <div class="panel-heading center mortalFont">{{player.player.name}}</div>
+            <div class="panel-body center">
+            <img ng-src="/images/{{player.player.imageLink}}" alt="Photo of {{player.player.name}}" width="250" height="300"><br /><br />
+                </div>
+            </div>
+        <div style="float:left;">
+            <div class="panel-body center">
+                <ul class="list-group">
+                    <li class="list-group-item">{{player.player.name}}</li>
+                    <li class="list-group-item">{{player.player.character}}</li>
+                    <li class="list-group-item">{{player.player.reputation}}</li>
+                    <li class="list-group-item">{{player.player.story}}</li>
+                </ul>
+            </div>
+        </div>
+            </div>
+       </div>
+    </div>
+</section>

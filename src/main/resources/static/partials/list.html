@@ -1,0 +1,81 @@
+<section>
+
+    <div ng-accordion></div>.
+
+    <div>
+        <div class="navbar-form navbar-left">
+            <div class="mortalFont20">Filtrowanie</div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Szukaj" ng-model="search.$">
+                </div>
+        </div>
+        <div class="navbar-form navbar-right">
+                <div class="mortalFont20">Sortowanie</div>
+            <div class="form-group">
+                    <select ng-model="playersOrder" class="form-control">
+                        <option value="player.name">Nazwa</option>
+                        <option value="player.character">Charakter</option>
+                        <option value="player.reputation">Reputacja</option>
+                    </select>
+                <label class="radio-inline">
+                <input type="radio" ng-model="kierunek" name="kierunek" checked>Rosnąco</label>
+                    <label class="radio-inline">
+                <input type="radio" ng-model="kierunek" name="kierunek" value="reverse">Malejąco</label>
+            </div>
+            </div>
+        </div>
+                <div class="form-group wysrodkuj320">
+                    <button type="button" class="btn btn-warning" style="width:200px" ng-show="db=='JPA'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a class="mortalFont20" href="#/listmongo" style="color:#fff;">Przejdź do listy MONGO</a></button>
+                    <button type="button" class="btn btn-warning" style="width:200px" ng-show="db=='MONGO'" ng-click='buttonClickSound.play()' ng-mouseover='buttonHoverSound.play()'><a class="mortalFont20" href="#/listjpa" style="color:#fff;">Przejdź do listy JPA</a></button>
+                    <button type="button" class="btn btn-warning mortalFont20" style="width:100px" ng-show='themeMusic.paused' ng-click='themeMusic.play()'>Play</button>
+                    <button type="button" class="btn btn-warning mortalFont20" style="width:100px" ng-show='!themeMusic.paused' ng-click='themeMusic.pause()'>Pause</button>
+                </div>
+    </div>
+        <!--        <label>Name only <input ng-model="search.player.name"></label><br>-->
+    </div>
+
+    <table class="table table-striped table-bordered alpha60">
+        <tr><th><button type="button" class="btn btn-success" ng-show="db=='JPA'" ng-click='buttonClickSound.play()'><a href="#/editjpa">Dodaj</a></button>
+            <button type="button" class="btn btn-success" ng-show="db=='MONGO'" ng-click='buttonClickSound.play()'><a href="#/editmongo">Dodaj</a></button>
+        </th><th class="warning">Nazwa</th><th class="warning">Charakter</th><th class="warning">Reputacja</th>
+          <!--  <th>Debug</th>-->
+            <th class="warning">Akcje</th></tr>
+        <tr ng-repeat="item in players | filter:search:false | orderBy: playersOrder:kierunek track by item.id" class="repeat-item">
+        <td>
+                <img ng-src="/images/{{item.player.imageLink}}" alt="Photo of {{item.player.name}}">
+            </td>
+            <td>
+                <div class="listElement">
+                {{item.player.name}}
+</div>
+            </td>
+            <td>
+                <div class="listElement">
+                    {{item.player.character}}
+                </div>
+            </td>
+            <td>
+                <div class="listElement">
+                    {{item.player.reputation}}
+                </div>
+            </td>
+<!--            <td style="width:100px; font-family:verdana; font-size:10px;">
+                    Reading from {{db}}<br /><br />
+                    {{item}}
+            </td>-->
+            <td>
+                <div class="listElement" ng-show="db=='JPA'">
+                    <button type="button" class="btn btn-warning" ng-click='buttonClickSound.play()'><a href="#/detailsjpa/{{item.id}}">Details</a></button>
+                    <button type="button" class="btn btn-info" ng-click='buttonClickSound.play()'><a href="#/editjpa/{{item.id}}">Edit</a></button>
+                    <button type="button" class="btn btn-danger" ng-really-message="Are you sure?" ng-really-click="deleteItem(item.id)" confirm="Czy napewno chcesz usunąć ?" ng-click='deletePlayerSound.play()'>Delete</button>
+                </div>
+                <div class="listElement" ng-show="db=='MONGO'">
+                    <button type="button" class="btn btn-warning" ng-click='buttonClickSound.play()'><a href="#/detailsmongo/{{item.id}}">Details</a></button>
+                    <button type="button" class="btn btn-info" ng-click='buttonClickSound.play()'><a href="#/editmongo/{{item.id}}">Edit</a></button>
+                    <button type="button" class="btn btn-danger" ng-click="deleteItem(item.id)">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</section>

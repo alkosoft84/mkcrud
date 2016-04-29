@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ang Demo</title>
+    <script src="../lib/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">-->
+</head>
+<body>
+<div class="panel panel-default">
+    <h1>Vanilla JS</h1>
+    <div class="panel-heading">
+        <h1>Podaj Imie: <input type="text" id="textInput" /></h1>
+    </div>
+    <div class="panel-body view-frame">
+        Imię to: <span id="nameSpan"></span>
+        <script>
+            var textInput = document.getElementById('textInput');
+            var nameSpanElement = document.getElementById('nameSpan');
+            textInput.addEventListener('keyup',function(){
+                var text = textInput.value;
+                nameSpanElement.innerHTML = text;
+            })
+        </script>
+    </div><br /><br /><br /><br />
+    <h1>JQuery</h1>
+    <div class="panel-heading">
+        <h1>Podaj Imie: <input type="text" id="textInputJQuery" /></h1>
+    </div>
+    <div class="panel-body view-frame">
+        Imię to: <span id="nameSpanJQuery"></span>
+        <script>
+            $('#textInputJQuery').on('keyup', function(){
+                $('#nameSpanJQuery').html($('#textInputJQuery').val())
+            })
+        </script>
+    </div><br /><br /><br /><br />
+    <div ng-app>
+    <h1>Angular JS</h1>
+    <div class="panel-heading">
+        <h1>Podaj Imie <input type="text" ng-model="imie" /></h1>
+    </div>
+    <div class="panel-body view-frame">
+        Imię to: {{imie}}
+    </div>
+    </div>
+</div>
+</body>
+</html>

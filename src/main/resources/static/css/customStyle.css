@@ -1,0 +1,172 @@
+body{
+  background-image: url("../images/back.jpg");
+}
+
+.wysrodkuj320{
+  margin:0 auto;
+  width:320px;
+}
+
+.przezroczysteTlo{
+  background:transparent;
+}
+
+.panel{
+  margin:0 auto;
+}
+
+.panel-heading{
+  background:transparent;
+}
+
+.panel-default{
+  width:1000px;
+}
+
+h1{
+  font-family: 'Mortal Kombat 5';
+  font-size:40px;
+  text-align:center;
+}
+
+th{
+  font-family: 'Mortal Kombat 5';
+  font-size:30px;
+  text-align:center;
+  vertical-align:middle;
+}
+
+td{
+  font-family: 'Mortal Kombat 5';
+  font-size:25px;
+  text-align:center;
+}
+
+.listElement{
+  margin-top:45px;
+}
+
+.btn-success {
+  font-size:22px;
+  width:100px;
+}
+
+.btn-info{
+  font-size:22px;
+  width:100px;
+}
+
+.btn-danger{
+  font-size:22px;
+  width:100px;
+}
+.btn-warning{
+  font-size:22px;
+  width:100px;
+}
+
+a{
+  color:black;
+}
+
+.center{
+  margin:0 auto;
+  padding:0 auto;
+  text-align:center;
+}
+.mortalFont{
+  font-family: 'Mortal Kombat 5';
+  font-size:30px;
+}
+
+.mortalFont20{
+  font-family: 'Mortal Kombat 5';
+  font-size:20px;
+}
+
+.list-group{
+  margin-top:110px;
+  float:right;
+}
+
+.list-group-item{
+  width:300px;
+}
+
+.animation {
+  -webkit-transition: 1s;
+}
+
+.view-container {
+  position: relative;
+}
+
+.view-frame.ng-enter, .view-frame.ng-leave {
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.view-frame.ng-enter {
+  -webkit-animation: 1s fade-in;
+  -moz-animation: 1s fade-in;
+  -o-animation: 1s fade-in;
+  animation: 1s fade-in;
+  z-index: 100;
+}
+
+.view-frame.ng-leave {
+  -webkit-animation: 1s fade-out;
+  -moz-animation: 1s fade-out;
+  -o-animation: 1s fade-out;
+  animation: 1s fade-out;
+  z-index:99;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-webkit-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave {
+  -webkit-transition:1s linear all;
+  transition:1s linear all;
+}
+
+.repeat-item.ng-enter,
+.repeat-item.ng-leave.ng-leave-active {
+  opacity:0;
+}
+.repeat-item.ng-leave,
+.repeat-item.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.toast{
+  background:#f00;
+  margin-right:200px;
+}
